@@ -97,7 +97,7 @@ def main():
             to_socket.sendto(pkt, (to_addr, to_port))
 
         if start_stage < 10 or random.randint(1, 100) > 20:
-            pkt, address = from_socket.recvfrom(2048, socket.MSG_DONTWAIT)
+            pkt, address = from_socket.recvfrom(2048,socket.MSG_DONTWAIT)
             if address[1] != receiver_port and address[1] != bind_port:
                 sender_port.pop(0)
                 sender_port.append(address[1])
